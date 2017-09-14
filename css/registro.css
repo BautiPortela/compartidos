@@ -1,18 +1,19 @@
-@media (min-width: 320px){
+body{
+  background-image: url("../imagenes/nalu-mobile-tablet.jpg");
+  background-repeat: no-repeat;
+}
 .container{
-  background-image: url(../imagenes/oblue.jpg);
   font-family: 'Raleway', sans-serif;
   color: #99c2ff;
   max-width: 350px;
   margin: auto;
   padding-bottom: 10px;
 }
-}
 
-@media (min-width: 768px){
+/*@media (min-width: 768px){
 }
 
 
 @media (min-width: 992px){
 
-}
+}*/

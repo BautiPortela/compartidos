@@ -1,0 +1,35 @@
+@media (min-width: 320px){
+.container .logo img {
+  width: 30%;
+}
+.container .logo{
+  text-align: center;
+}
+.container nav{
+  text-align: center;
+  background-color: green;
+}
+.social ul{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.copy{
+  text-align: center;
+}
+}
+
+@media (min-width: 768px){
+.container nav{
+  overflow: hidden;
+  }
+.container ul{
+  background-color:
+}
+.container nav li{
+  display: inline;
+}
+}
+
+@media (min-width: 992px){
+
+}

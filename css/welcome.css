@@ -1,0 +1,39 @@
+body{
+  background-image: url(../imagenes/nalu-desktop-3.jpg);
+}
+h1{
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  color: #B4D8E7;
+}
+h2{
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: #B4D8E7;
+}
+h3{
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: #B4D8E7;
+  margin-top: 50px;
+}
+
+
+@media (min-width: 768px){
+body{
+  background-image: url(../imagenes/nalu-desktop-3.jpg);
+  background-size: cover;
+  }
+}
+
+@media (min-width: 992px){
+body{
+  background-image: url(../imagenes/nalu-desktop-3.jpg);
+  background-size: cover;
+  }
+}

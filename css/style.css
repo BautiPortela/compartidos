@@ -1,4 +1,4 @@
-@media (min-width: 320px){
+
 .container .logo img {
   width: 30%;
 }
@@ -28,7 +28,7 @@
 .container nav li{
   display: inline;
 }
-}
+
 
 @media (min-width: 992px){
 

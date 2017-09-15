@@ -34,9 +34,10 @@ nav ul li a{
 .main {
       margin-top: 25px;
 }
+
 .box       {   
                box-sizing: content-box;
-               
+
 
           }
 
@@ -104,6 +105,11 @@ nav ul li a{
             width:9.5rem;
 
             }
+
+nav ul li a:hover {
+                    background:#073175;
+                    font-weight: bold;
+}
 
 .main {
         position: relative;

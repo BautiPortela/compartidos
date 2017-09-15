@@ -3,10 +3,15 @@ background-image: url("../imagenes/nalu-mobile-tablet.jpg");
 background-repeat: no-repeat;
 background-position: center;
 }
+
 header{
 font-family: 'Raleway', sans-serif;
 text-align: center;
 display: inline;
+}
+header .logo {
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
 header nav ul li{
 list-style: none;

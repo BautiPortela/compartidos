@@ -79,6 +79,11 @@ footer ul li a{
                 text-decoration: none;
                 color:black;
 }
+
+footer .social img{
+                  height: 40px;
+                  width:40px;
+}
 .copy {
         margin-top: 12px;
         text-align: center;
@@ -98,12 +103,11 @@ nav ul {
 }
 nav ul li {
           float:left;
+          width:25%;
 }
 
 nav ul li a{
-            display: inline-block;
-            width:9.5rem;
-
+            display:block;
             }
 
 nav ul li a:hover {
@@ -140,10 +144,6 @@ footer {
 
 @media (min-width:1024px) {
 
-nav ul li a{
-            width:13.5rem;
-
-            }
 .box {
   float:left;
 }

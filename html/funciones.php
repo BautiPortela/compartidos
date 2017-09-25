@@ -1,4 +1,11 @@
 <?php
+
+
+if (!estaLogueado() && isset($_COOKIE["usuarioLogueado"])) {
+  loguear($_COOKIE["usuarioLogueado"]);
+}
+
+
 function validarInfo($param) {
   $arrayDeErrores = [];
   validaSiExiste($_POST);
@@ -78,6 +85,11 @@ function validaSiExiste($param2){
     }
   }*/
 }
+/*Esta funcion es la que establece el cookie asi se guarda el perfil. */
+function recordarUsuario($email) {
+  setcookie("usuarioLogueado", $email, time() + 60*60*24*7);
+}
+
 function validarLogin(){
     /*esta funcion deberia devolverme un array de errores*/
 }

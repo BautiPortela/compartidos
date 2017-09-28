@@ -58,6 +58,10 @@ h2{
 }
 .registro button {
   margin-top: 20px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
 }
 
 .main{

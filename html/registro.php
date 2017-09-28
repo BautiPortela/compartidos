@@ -25,6 +25,15 @@
 				$userlleno = null;
 				$emaillleno = null;
 			}
+			
+			/* GUARDAMOS LA FOTO */
+			
+				$archivo = $_FILES["foto-perfil"]["tmp_name"];
+    				$nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
+    				$extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
+    				$nombre = dirname(__FILE__) . "/img/" . $_POST["email"] . ".$extension";
+				move_uploaded_file($archivo, $nombre);
+
 			/*Si has data envia los datos a variables para q persista en form cuando el server hace validacion*/
 			if ($_POST){
 				$nombrelleno=$_POST["nombre"];
@@ -72,6 +81,17 @@
 						<br>
 						Usuario: <input type="text" name="user" value="<?php echo $userlleno;?>" placeholder="Nickname" >
 						<br>
+						<!-- input de imagenes
+						<div class="form-group">
+          						<label for="">Foto de Perfil</label>
+
+          						<?php if (isset($arrayErrores["foto-perfil"])) : ?>
+            						<input class="form-control error" type="file" name="foto-perfil">
+          						<?php else: ?>
+            						<input class="form-control" type="file" name="foto-perfil">
+          						<?php endif; ?>
+        					</div>
+						-->
 						<br>
 						E-mail: <input type="email" name="email" value="<?php echo $emaillleno;?>" placeholder="yo@email.com">
 						<br>

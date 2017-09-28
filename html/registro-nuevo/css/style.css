@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body{
+  background-image: url("../imagenes/nalu-mobile.jpg");
+  font-family: 'Raleway';
+  background-repeat: no-repeat;
+}
+header{
+text-align: center;
+}
+
+header .logo {
+	margin-top: 10px;
+	margin-bottom: 30px;
+
+}
+main{
+  margin: 0 10px 0 10px;
+}
+.user{
+  margin-bottom: 10px;
+}
+.login{
+  display: block;
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+
+}
+
+main div.inicio{
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  border: 2px solid white;
+}
+h1{
+  font-size: 50px;
+}
+h2{
+  font-size: 30px;
+}
+.registro{
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px 15px;
+  margin-bottom: 10px;
+  border: 2px solid white;
+}
+
+.main{
+font-family: 'Raleway', sans-serif;
+color: white;
+border-radius: 20px;
+/*margin: auto;*/
+padding: 20px;
+background-color: black;
+opacity: 0.8;
+text-align: center;
+border: 2px solid white;
+margin-bottom: 10px;
+overflow: hidden;
+}
+
+
+.submain label {
+  width: 25%;
+  float: left;
+}
+.submain input {
+float: right;
+}
+.submain1 label {
+  /*width: 50%;*/
+  float: left;
+}
+.submain1 input {
+/*width: 25%;*/
+float: right;
+}
+div .guest {
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+  /*float: left;*/
+  padding: 20px 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+div .guest1{
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+  /*float: right;*/
+  padding: 20px 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.ingreso{
+  /*width: 400px;*/
+  margin: 0 auto;
+}
+a :hover{
+  background-color: grey;
+}
+@media (min-width: 769px){
+
+  .submain{
+    text-align: left;
+    float: left;
+    display: inline;
+  }
+  .submain1{
+    float: right;
+    text-align: left;
+    display: inline;
+  }
+body{
+  background-image: url("../imagenes/nalu-desktop-4.jpg");
+  background-size: cover;
+  font-family: 'Raleway';
+}
+main{
+  width: 600px;
+  margin: 0 auto;
+}
+
+main div.inicio{
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid white;
+}
+h1{
+  font-size: 70px;
+}
+h2{
+  font-size: 40px;
+}
+.registro{
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  padding: 20px;
+  /*margin-bottom: 50px;*/
+  border: 2px solid white;
+}
+
+div .guest {
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+  float: left;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+div .guest1{
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+  float: right;
+  padding: 20px 20px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+.ingreso{
+  width: 400px;
+  margin: 0 auto;
+}
+a :hover{
+  background-color: grey;
+}
+.user{
+  display: inline;
+}
+.pass{
+  display: inline;
+}
+.login{
+  display: inline;
+}
+}

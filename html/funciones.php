@@ -1,9 +1,9 @@
 <?php
 
 
-if (!estaLogueado() && isset($_COOKIE["usuarioLogueado"])) {
+/*if (!estaLogueado() && isset($_COOKIE["usuarioLogueado"])) {
   loguear($_COOKIE["usuarioLogueado"]);
-}
+}*/
 
 
 function validarInfo($param) {

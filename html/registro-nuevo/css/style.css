@@ -42,7 +42,8 @@ main div.inicio{
 }
 h1{
   font-size: 50px;
-  font-family: 'Indie Flower', cursive;
+font-family: 'Audiowide', cursive;
+
 }
 h2{
   font-size: 30px;
@@ -57,12 +58,16 @@ h2{
   margin-bottom: 10px;
   /*border: 2px solid white;*/
 }
-.registro button {
+.registro .login button {
   margin-top: 20px;
   background: #fff;
   padding: 10px;
   border-radius: 10px;
   border: none;
+}
+
+.registro .record {
+    margin-top: 15px;
 }
 
 .main{

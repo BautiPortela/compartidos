@@ -51,8 +51,8 @@ function validarInfo($param) {
   elseif ($_POST["pass"] != $_POST["pass-confirm"]) {
       $arrayDeErrores["password"][0] = "Ambas contraseñas no coinciden";
     }
-if (empty($_POST["foto"])) {
-  $arrayDeErrores["foto"] = "Por favor cargue una foto para su perfil";
+  if($_FILES["foto-perfil"]["error"] != 0) {
+  $arrayDeErrores["foto-perfil"] = "Por favor cargue una foto para su perfil";
 }
   return $arrayDeErrores;
 }
@@ -78,7 +78,6 @@ function validaSiExiste($param2){
   $arraysss = [];
   $usuarios = file_get_contents("user.json");
   $arraysss = json_decode($usuarios, true);
-  echo $arraysss;
 /*  foreach ($array as $key => $value) {
     if ($array[$key] == $_POST["email"]) {
       echo "E-mail ya esta registrado";

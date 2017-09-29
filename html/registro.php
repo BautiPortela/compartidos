@@ -25,16 +25,7 @@
 				$userlleno = null;
 				$emaillleno = null;
 			}
-			
-			/* GUARDAMOS LA FOTO */
-			
-				$archivo = $_FILES["foto-perfil"]["tmp_name"];
-    				$nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
-    				$extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-    				$nombre = dirname(__FILE__) . "/img/" . $_POST["email"] . ".$extension";
-				move_uploaded_file($archivo, $nombre);
-
-			/*Si has data envia los datos a variables para q persista en form cuando el server hace validacion*/
+			/*Si hay data envia los datos a variables para q persista en form cuando el server hace validacion*/
 			if ($_POST){
 				$nombrelleno=$_POST["nombre"];
 				$apellidolleno=$_POST["apellido"];
@@ -43,8 +34,15 @@
 			/*Manda la info a arrayDeErrores para ver si es necesario mostrar errores de carga de datos al user*/
 				$arrayDeErrores = validarInfo($_POST);
 				if (empty($arrayDeErrores)) {
-					echo "funciona";
-					creaUsuario($_POST);
+						creaUsuario($_POST);
+					/*Guardamos foto solo porque no hay errores*/
+					$nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
+					$archivo = $_FILES["foto-perfil"]["tmp_name"];
+					$extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
+					$location = '/upload/';
+					$nombre = dirname(__FILE__) . "/img/" . $_POST["email"] . ".$extension";
+
+					move_uploaded_file($archivo, $nombre);
 				}
 				else {
 					$arrayDeErrores = validarInfo($_POST);
@@ -70,7 +68,7 @@
 			echo "<br>";
 			?>
 			<div class="main">
-				<form action="" method="post">
+				<form action="" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>Registrate:</legend>
 						Nombre: <input type="text" name="nombre" value="<?php echo $nombrelleno;?>" placeholder="Nombre" >
@@ -81,17 +79,8 @@
 						<br>
 						Usuario: <input type="text" name="user" value="<?php echo $userlleno;?>" placeholder="Nickname" >
 						<br>
-						<!-- input de imagenes
-						<div class="form-group">
-          						<label for="">Foto de Perfil</label>
-
-          						<?php if (isset($arrayErrores["foto-perfil"])) : ?>
-            						<input class="form-control error" type="file" name="foto-perfil">
-          						<?php else: ?>
-            						<input class="form-control" type="file" name="foto-perfil">
-          						<?php endif; ?>
-        					</div>
-						-->
+						 Select image to upload:
+						    <input type="file" name="foto-perfil">
 						<br>
 						E-mail: <input type="email" name="email" value="<?php echo $emaillleno;?>" placeholder="yo@email.com">
 						<br>

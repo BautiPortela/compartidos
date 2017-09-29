@@ -16,7 +16,7 @@ if ($_POST) {
     									loguear($_POST["email"]);
 										}
 										else {
-											echo "No existe el usuario";
+											print_r($arrayErrores);
 										}
     	if (isset($_POST["recordame"])) {
       									recordarUsuario($_POST["email"]);

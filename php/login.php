@@ -1,10 +1,9 @@
-<?php 
+<?php
 		require_once("funciones.php");
-		
-		/*if (estaLogueado()) {
-  							header("Location:home.php");
-						}
-		*/
+
+		// if (estaLogueado()) {
+  	// 						header("Location:homeox.php");
+		// 				}
 		$arrayErrores = [];
 
 if ($_POST) {
@@ -13,15 +12,17 @@ if ($_POST) {
   		$arrayErrores = validarLogin($_POST);
 
 //Si es valido, loguear
-  
   		if (count($arrayErrores) == 0) {
     									loguear($_POST["email"]);
+										}
+										else {
+											echo "No existe el usuario";
+										}
     	if (isset($_POST["recordame"])) {
       									recordarUsuario($_POST["email"]);
     									}
-    	header("Location:home.php");exit;
+    	// header("Location:homeox.php");exit;
   										}
-			}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,12 +36,12 @@ if ($_POST) {
 	</head>
 	<body>
 	<div class="registro">
-    	<form>
+    	<form action="" method="post">
       		<div class="user">
-      			Usuario: <input type="text" name="" value="" placeholder="Usuario">
+      			Email: <input type="email" name="email" value="" placeholder="Usuario">
       		</div>
       		<div class="pass">
-      			Contraseña: <input type="password" value="" placeholder="Contraseña">
+      			Contraseña: <input type="password" name="pass" value="" placeholder="Contraseña">
       		</div>
       		<div class="login">
       			<button type="submit">Iniciar sesion</button>
@@ -53,11 +54,10 @@ if ($_POST) {
   <div class="box">
         <div class="infopromo">
           <img src="" alt="">
-          <h1></h1>         
+          <h1></h1>
           <h3>Novedades y Premios</h3>
           <p></p>
         </div>
   </div>
-	 
-   <?php require_once ("footer.php"); ?>
 
+   <?php require_once ("footer.php"); ?>

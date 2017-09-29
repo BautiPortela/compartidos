@@ -92,15 +92,24 @@ function recordarUsuario($email) {
   setcookie("usuarioLogueado", $email, time() + 60*60*24*7);
 }
 
-function validarLogin(){
-    function traerPorEmail($email) {
-  $todos = traerTodos();
-  foreach ($todos as $value) {
-    if ($usuario["email"] == $email && $usuario["password"] == $password) {
-      return ;
+function validarLogin($informacion) {
+  $arrayDeErrores = [];
+  if (empty($informacion["email"])) {
+    $arrayDeErrores["email"] = "Por favor ingrese un email";
+  }
+  else if(filter_var($informacion["email"], FILTER_VALIDATE_EMAIL) == false) {
+    $arrayDeErrores["email"] = "Por favor ingresar un email con formato valido";
+  }
+  else if (traerPorEmail($informacion["email"]) == NULL) {
+    $arrayDeErrores["email"] = "El usuario no existe";
+  } else {
+    //Validar la contraseña
+    $usuario = traerPorEmail($informacion["email"]);
+    if (password_verify($informacion["pass"], $usuario["pass"]) == false) {
+      $arrayDeErrores["pass"] = "La password es incorrecta";
     }
   }
-}
+  return $arrayDeErrores;
 }
 function loginExitoso(/*????*/){
   /*esta funcion va a recibir los parametros y iniciar una session*/

@@ -108,5 +108,5 @@
 			</div>
 		</div>
 	</body>
-	<?php session_write_close();?>
+</html>
 </html>

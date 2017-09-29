@@ -64,6 +64,7 @@ function traerTodos() {
   /* Por lo que entendi esto divive las string de json por End Of Line en un array*/
   $array = explode(PHP_EOL, $archivo);
   array_pop($array);
+
   $arrayFinal = [];
   foreach ($array as $usuario) {
     $arrayFinal["usuario"] = json_decode($usuario, true);
@@ -94,15 +95,17 @@ function recordarUsuario($email) {
 function validarLogin(){
     function traerPorEmail($email) {
   $todos = traerTodos();
-  foreach ($todos as value) {
-    if ($usuario["email"] == $email) && ($usuario["password"] == $password) {
-      return LOGIN OK;
+  foreach ($todos as $value) {
+    if ($usuario["email"] == $email && $usuario["password"] == $password) {
+      return ;
     }
   }
+}
 }
 function loginExitoso(/*????*/){
   /*esta funcion va a recibir los parametros y iniciar una session*/
 }
 function logout(){
 }
-}
+
+?>

@@ -34,7 +34,6 @@
 			/*Manda la info a arrayDeErrores para ver si es necesario mostrar errores de carga de datos al user*/
 				$arrayDeErrores = validarInfo($_POST);
 				if (empty($arrayDeErrores)) {
-					if (traerPorEmail($_POST["email"] == null)) {
 						creaUsuario($_POST);
 					/*Guardamos foto solo porque no hay errores*/
 					$nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
@@ -44,10 +43,6 @@
 					$nombre = dirname(__FILE__) . "/img/" . $_POST["email"] . ".$extension";
 
 					move_uploaded_file($archivo, $nombre);
-					}
-					else {
-						echo "El email ya esta registrado en nuestra base";
-					}
 				}
 				else {
 					$arrayDeErrores = validarInfo($_POST);
@@ -74,7 +69,6 @@
 			?>
 			<div class="main">
 				<form action="" method="post" enctype="multipart/form-data">
-					<fieldset>
 						<legend>Registrate:</legend>
 						Nombre: <input type="text" name="nombre" value="<?php echo $nombrelleno;?>" placeholder="Nombre" >
 						<br>
@@ -85,7 +79,7 @@
 						Usuario: <input type="text" name="user" value="<?php echo $userlleno;?>" placeholder="Nickname" >
 						<br>
 						 Select image to upload:
-						    <input type="file" name="foto-perfil">
+						 <input type="file" name="foto-perfil">
 						<br>
 						E-mail: <input type="email" name="email" value="<?php echo $emaillleno;?>" placeholder="yo@email.com">
 						<br>
@@ -105,7 +99,6 @@
 						<br> -->
 						<a href=""><input type='submit' name='Submit' value='enviar'></a>
 						<button type='reset' name='reset' value='Borrar'>Vaciar
-					</fieldset>
 				</form>
 			</div>
 		</div>

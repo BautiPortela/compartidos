@@ -34,6 +34,7 @@
 			/*Manda la info a arrayDeErrores para ver si es necesario mostrar errores de carga de datos al user*/
 				$arrayDeErrores = validarInfo($_POST);
 				if (empty($arrayDeErrores)) {
+					if (traerPorEmail($_POST["email"] == null)) {
 						creaUsuario($_POST);
 					/*Guardamos foto solo porque no hay errores*/
 					$nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
@@ -43,6 +44,10 @@
 					$nombre = dirname(__FILE__) . "/img/" . $_POST["email"] . ".$extension";
 
 					move_uploaded_file($archivo, $nombre);
+					}
+					else {
+						echo "El email ya esta registrado en nuestra base";
+					}
 				}
 				else {
 					$arrayDeErrores = validarInfo($_POST);

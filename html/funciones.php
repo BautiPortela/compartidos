@@ -67,7 +67,10 @@ function traerTodos() {
 
   $arrayFinal = [];
   foreach ($array as $usuario) {
-    $arrayFinal[] = json_decode($usuario, true);
+    $arrayFinal["usuario"] = json_decode($usuario, true);
+  }
+  foreach ($array as $password {
+    $arrayFinal["password] = json_decode($password,true);
   }
   return $arrayFinal;
 }
@@ -90,7 +93,13 @@ function recordarUsuario($email) {
 }
 
 function validarLogin(){
-    /*esta funcion deberia devolverme un array de errores*/
+    function traerPorEmail($email) {
+  $todos = traerTodos();
+  foreach ($todos as value) {
+    if ($usuario["email"] == $email) && ($usuario["password"] == $password {
+      return LOGIN OK
+    }
+  }
 }
 function loginExitoso(/*????*/){
   /*esta funcion va a recibir los parametros y iniciar una session*/

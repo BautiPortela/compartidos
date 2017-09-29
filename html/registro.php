@@ -71,8 +71,6 @@
 			?>
 			<div class="main">
 				<form action="" method="post" enctype="multipart/form-data">
-					<!-- <fieldset> -->
-						<!-- <legend>Registrate:</legend> -->
 						Nombre: <input type="text" name="nombre" value="<?php echo $nombrelleno;?>" placeholder="Nombre" >
 						<br>
 						<br>
@@ -81,19 +79,23 @@
 						<br>
 						Usuario: <input type="text" name="user" value="<?php echo $userlleno;?>" placeholder="Nickname" >
 						<br>
-						 Select image to upload:
-						 <input type="file" name="foto-perfil">
 						<br>
-						E-mail: <input type="email" name="email" value="<?php echo $emaillleno;?>" placeholder="yo@email.com">
-						<br>
-						<br>
-						E-mail: <input type="email" name="email-confirm" value="" placeholder="Confirmar E-mail">
+						<div>
+						 Seleccionar Imágen de Perfil:
+						 <input class="image" type="file" name="foto-perfil">
+						 </div>
 						<br>
 						<br>
-						Password:<input type="password" name="pass" value="" placeholder="Contraseña" >
+						Email: <input type="email" name="email" value="<?php echo $emaillleno;?>" placeholder="yo@email.com">
 						<br>
 						<br>
-						Password:<input type="password" name="pass-confirm" value="" placeholder="Confirmar Contraseña" >
+						Email: <input type="email" name="email-confirm" value="" placeholder="Confirmar E-mail">
+						<br>
+						<br>
+						Contraseña:<input type="password" name="pass" value="" placeholder="Contraseña" >
+						<br>
+						<br>
+						Contraseña:<input type="password" name="pass-confirm" value="" placeholder="Confirmar Contraseña" >
 						<br>
 						<br>
 						<!-- ESTO SE COMENTA, ES REGISTRO, NO LOGIN
@@ -102,7 +104,6 @@
 						<br> -->
 						<a href=""><input type='submit' name='Submit' value='enviar'></a>
 						<button type='reset' name='reset' value='Borrar'>Vaciar
-					<!-- </fieldset> -->
 				</form>
 			</div>
 		</div>

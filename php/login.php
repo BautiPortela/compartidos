@@ -14,14 +14,15 @@ if ($_POST) {
 //Si es valido, loguear
   		if (count($arrayErrores) == 0) {
     									loguear($_POST["email"]);
+											header("Location:../html/home.php");exit;
 										}
 										else {
-											echo "No existe el usuario";
+											print_r($arrayErrores);
 										}
     	if (isset($_POST["recordame"])) {
       									recordarUsuario($_POST["email"]);
     									}
-    	// header("Location:homeox.php");exit;
+    	header("Location:homeox.php");exit;
   										}
 ?>
 <!DOCTYPE html>

@@ -1,3 +1,30 @@
+<?php
+
+require_once("funciones.php");
+
+if (estaLogueado()) {
+  header("Location:home.php");
+}
+
+$arrayErrores = [];
+if ($_POST) {
+
+//Validar
+ 
+$arrayErrores = validarLogin($_POST);
+
+//Si es valido, loguear
+  
+if (count($arrayErrores) == 0) {
+    loguear($_POST["email"]);
+    if (isset($_POST["recordame"])) {
+      recordarUsuario($_POST["email"]);
+    }
+    header("Location:home.html");exit;
+  }
+}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +33,15 @@
 	<link rel="stylesheet" href="../css/bienvenidos.css">
 </head>
 <body>
-	<div class="registro">
+
+<?php if (count($arrayErrores) > 0) : ?>
+        <ul style="color:red">
+          <?php foreach($arrayErrores as $error) : ?>
+            <li><?=$error?></li>
+          <?php endforeach; ?>
+
+
+<div class="registro">
     <form>
       <div class="user">
       Usuario: <input type="text" name="" value="">

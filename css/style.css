@@ -110,7 +110,7 @@ nav ul li a{
             }
 
 nav ul li a:hover {
-                    background:#073175;
+                    /*background:#073175;*/
                     font-weight: bold;
 }
 

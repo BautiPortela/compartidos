@@ -1,0 +1,41 @@
+body{
+  background-image: url("../imagenes/nalu-mobile.jpg");
+  font-family: 'Raleway';
+  background-repeat: no-repeat;
+}
+
+header{
+font-family: 'Raleway', sans-serif;
+text-align: center;
+display: inline;
+}
+header .logo {
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+header nav ul li{
+list-style: none;
+margin: 10px 10px 10px 10px;
+}
+a:visited {
+color: blue;
+}
+.home{
+font-weight: bold;
+}
+.container{
+font-family: 'Raleway', sans-serif;
+color: white;
+box-sizing: border-box;
+max-width: 350px;
+margin: auto;
+padding-bottom: 10px;
+background: rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 769px){
+  body{
+    background-image: url("../imagenes/nalu-desktop-4.jpg");
+    background-size: cover;
+    font-family: 'Raleway';
+  }
+}

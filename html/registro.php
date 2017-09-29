@@ -4,10 +4,12 @@
 <html>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Original+Surfer" rel="stylesheet">
-		<link rel="stylesheet" href="../css/registro.css">
+		<!-- <link rel="stylesheet" href="../css/registro.css"> -->
 		<style>@import url('https://fonts.googleapis.com/css?family=Raleway');</style>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
+		<!-- <link rel="stylesheet" href="../css/registro.css"> -->
+		<link rel="stylesheet" href="../css/registro1.css">
 		<title>R e g i s t r o</title>
 	</head>
 	<body>
@@ -74,8 +76,8 @@
 			?>
 			<div class="main">
 				<form action="" method="post" enctype="multipart/form-data">
-					<fieldset>
-						<legend>Registrate:</legend>
+					<!-- <fieldset> -->
+						<!-- <legend>Registrate:</legend> -->
 						Nombre: <input type="text" name="nombre" value="<?php echo $nombrelleno;?>" placeholder="Nombre" >
 						<br>
 						<br>
@@ -105,7 +107,7 @@
 						<br> -->
 						<a href=""><input type='submit' name='Submit' value='enviar'></a>
 						<button type='reset' name='reset' value='Borrar'>Vaciar
-					</fieldset>
+					<!-- </fieldset> -->
 				</form>
 			</div>
 		</div>

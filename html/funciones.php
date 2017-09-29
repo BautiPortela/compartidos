@@ -1,14 +1,6 @@
 <?php
-
-
-/*if (!estaLogueado() && isset($_COOKIE["usuarioLogueado"])) {
-  loguear($_COOKIE["usuarioLogueado"]);
-}*/
-
-
 function validarInfo($param) {
   $arrayDeErrores = [];
-  validaSiExiste($_POST);
   if (empty($_POST["nombre"])) {
 
     $arrayDeErrores["nombre"] ="Por favor ingrese un nombre";
@@ -56,15 +48,7 @@ function validarInfo($param) {
 }
   return $arrayDeErrores;
 }
-  /*
-  if (empty($param["genero"])){
 
-    $arrayDeErrores = [("genero"),("Por favor seleccione un genero")];
-  }
-  if (empty($param["fnac_dia"])|| empty($param["fnac_mes"]) || empty($param["fnac_anio"])) {
-
-    $arrayDeErrores = [];
-}*/
 function creaUsuario($param1){
   $data["nombre"]=$param1["nombre"];
   $data["apellido"]=$param1["apellido"];
@@ -74,15 +58,31 @@ function creaUsuario($param1){
   $dataJSON = json_encode($data);
   file_put_contents("user.json", $dataJSON . PHP_EOL, FILE_APPEND);
 }
-function validaSiExiste($param2){
-  $arraysss = [];
-  $usuarios = file_get_contents("user.json");
-  $arraysss = json_decode($usuarios, true);
-/*  foreach ($array as $key => $value) {
-    if ($array[$key] == $_POST["email"]) {
-      echo "E-mail ya esta registrado";
+
+function traerTodos() {
+  $archivo = file_get_contents("user.json");
+  /* Por lo que entendi esto divive las string de json por End Of Line en un array*/
+  $array = explode(PHP_EOL, $archivo);
+  array_pop($array);
+
+  $arrayFinal = [];
+  foreach ($array as $usuario) {
+    $arrayFinal[] = json_decode($usuario, true);
+  }
+  return $arrayFinal;
+}
+
+function traerPorEmail($email) {
+  $todos = traerTodos();
+
+  foreach ($todos as $usuario) {
+    if ($usuario["email"] == $email) {
+      return $usuario;
     }
-  }*/
+  }
+
+  return NULL;
+
 }
 /*Esta funcion es la que establece el cookie asi se guarda el perfil. */
 function recordarUsuario($email) {

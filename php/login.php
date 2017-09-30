@@ -14,6 +14,7 @@ if ($_POST) {
 //Si es valido, loguear
   		if (count($arrayErrores) == 0) {
     									loguear($_POST["email"]);
+											header("Location:../html/home.php");exit;
 										}
 										else {
 											print_r($arrayErrores);
@@ -21,8 +22,7 @@ if ($_POST) {
     	if (isset($_POST["recordame"])) {
       									recordarUsuario($_POST["email"]);
     									}
-                    }
-
+  										}
 ?>
 <!DOCTYPE html>
 <html>

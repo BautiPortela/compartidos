@@ -111,6 +111,10 @@ function validarLogin($informacion) {
   }
   return $arrayDeErrores;
 }
+
+function loguear($email) {
+  $_SESSION["usuarioLogueado"] = $email;
+}
 function loginExitoso(/*????*/){
   /*esta funcion va a recibir los parametros y iniciar una session*/
 }

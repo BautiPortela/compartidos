@@ -1,6 +1,8 @@
-<?php session_start(); ?>
-<!DOCTYPE html>
 <?php require_once("funciones.php"); ?>
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+
 <html>
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=Original+Surfer" rel="stylesheet">
@@ -15,7 +17,7 @@
 	<body>
 		<header>
 			<div class="logo">
-				<a href="home.html"><img src="../imagenes/flor.png" alt=""></a>
+				<a href="../html/home.html"><img src="../imagenes/flor.png" alt=""></a>
 			</div>
 		</header>
 		<div class="container">
@@ -102,7 +104,7 @@
 						Recordarme<input type="checkbox" name="recordame">
 						<br>
 						<br> -->
-						<a href=""><input type='submit' name='Submit' value='enviar'></a>
+						<a href="login.php"><input type='submit' name='Submit' value='enviar'></a>
 						<button type='reset' name='reset' value='Borrar'>Vaciar
 				</form>
 			</div>

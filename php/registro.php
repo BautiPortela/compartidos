@@ -56,7 +56,7 @@
 							for ($i=0; $i<count($arrayDeErrores["password"]); $i++) {
 								echo "<br>";?>
 								<!--Esto se deberia hacer en CSS lo hice aca para q sea mas visible porque cambia de color -->
-								<span style="color:yellow;"><?php echo $arrayDeErrores["password"][$i]; ?></span>
+								<span style="color:red;"><?php echo $arrayDeErrores["password"][$i]; ?></span>
 								<?php echo "<br>";
 							}
 						}

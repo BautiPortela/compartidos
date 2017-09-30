@@ -21,8 +21,8 @@ if ($_POST) {
     	if (isset($_POST["recordame"])) {
       									recordarUsuario($_POST["email"]);
     									}
-    	// header("Location:homeox.php");exit;
-  										}
+                    }
+
 ?>
 <!DOCTYPE html>
 <html>

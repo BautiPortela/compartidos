@@ -1,14 +1,20 @@
 <?php
+//PLANILLA DE FUNCIONES
+
+//Valida la informacion enviada por POST. Define $arrayDeErrores vacia, luego inserta en el array cualquier error en su respectiva posicion.
+//Return el array completo con sus errores.
+
 function validarInfo($param) {
+
   $arrayDeErrores = [];
   if (empty($_POST["nombre"])) {
 
     $arrayDeErrores["nombre"] ="*Por favor ingrese un nombre";
-  }
+    }
   if (empty($_POST["user"])) {
 
     $arrayDeErrores["user"] = "*Por favor ingrese un usuario";
-  }
+    }
   elseif (strlen($_POST["user"]) < 5 ) {
 
     $arrayDeErrores["usuario"] = "*Usuario debe tener al menos 5 caracteres";
@@ -16,38 +22,40 @@ function validarInfo($param) {
   if (empty($_POST["email"]) || empty($_POST["email-confirm"])) {
 
     $arrayDeErrores["email"] = "*Por favor ingrese un email en ambos campos";
-  }
+    }
   else {
     if ($_POST["email"] != $_POST["email-confirm"]) {
     $arrayDeErrores["email"] = "*El e-mail y su confirmacion no coinciden";
-  }
-}
+    }
+    } 
   if (empty($_POST["pass"])) {
 
     $arrayDeErrores["password"][0] = "*Por favor ingrese una contraseña";
     $arrayDeErrores["password"][1] = "*Usar al menos 8 chars para password";
     $arrayDeErrores["password"][2] = "*Su password debe contener una mayuscula y una miniscula";
-  }
+    }
   elseif (strlen($_POST["pass"])<8 ) {
 
     $arrayDeErrores["password"][0] = "*Usar al menos 8 chars para password";
     $arrayDeErrores["password"][1] = "*Su password debe contener una mayuscula y una miniscula";
-  }
+    }
   if (preg_match('/a-zA-Z/',$_POST["pass"]) && $_POST["pass"] != $_POST["pass-confirm"]) {
     $arrayDeErrores["password"][0] = "*Su password debe contener una mayuscula y una miniscula";
     $arrayDeErrores["password"][1] = "*Ambas contraseñas no coinciden";
-  }
-  elseif (preg_match('/a-zA-Z/',$_POST["pass"])) {
+    }
+    elseif (preg_match('/a-zA-Z/',$_POST["pass"])) {
       $arrayDeErrores["password"][0] = "*Su password debe contener una mayuscula y una miniscula";
     }
-  elseif ($_POST["pass"] != $_POST["pass-confirm"]) {
+    elseif ($_POST["pass"] != $_POST["pass-confirm"]) {
       $arrayDeErrores["password"][0] = "*Ambas contraseñas no coinciden";
     }
   if($_FILES["foto-perfil"]["error"] != 0) {
   $arrayDeErrores["foto-perfil"] = "*Por favor cargue una foto para su perfil";
+    }
+      return $arrayDeErrores;
 }
-  return $arrayDeErrores;
-}
+
+// Crea el array  desde $param1 => $data y los manda ya encodeados a user.json
 
 function creaUsuario($param1){
   $data["nombre"]=$param1["nombre"];
@@ -58,6 +66,8 @@ function creaUsuario($param1){
   $dataJSON = json_encode($data);
   file_put_contents("user.json", $dataJSON . PHP_EOL, FILE_APPEND);
 }
+
+// Trae la $data desde json para agarrar por linea en el array. y luego decodearla y dejar un array final con la data $usuario + $password
 
 function traerTodos() {
   $archivo = file_get_contents("user.json");
@@ -74,6 +84,7 @@ function traerTodos() {
   }
   return $arrayFinal;
 }
+//Define $todos = a la funcion traertodos() le hace un foreach y por cada posicion donde $usuario(en email) sea igual a la data traira en $email devuelve al $usuario 
 
 function traerPorEmail($email) {
   $todos = traerTodos();
@@ -83,14 +94,16 @@ function traerPorEmail($email) {
       return $usuario;
     }
   }
-
   return NULL;
-
 }
-/*Esta funcion es la que establece el cookie asi se guarda el perfil. */
+
+//Esta funcion es la que establece el cookie asi se guarda el perfil. 
+
 function recordarUsuario($email) {
   setcookie("usuarioLogueado", $email, time() + 60*60*24*7);
 }
+
+//Validar Login mediante POST que viene en $informacion, 
 
 function validarLogin($informacion) {
   $arrayDeErrores = [];

@@ -15,7 +15,7 @@ margin: 0 10px 0 10px;
 font-family: 'Audiowide', cursive;
 color: white;
 border-radius: 20px;
-padding: 20px;
+padding: 45px;
 background-color: black;
 opacity: 0.8;
 margin-bottom: 10px;
@@ -29,9 +29,13 @@ overflow: hidden;
 
 }
 .registrologin .user input {
-padding: 5px;
+padding: 15px;
 margin-top: 10px;
 margin-bottom: 10px;
+background-color: rgba(60,60,60,0.6);
+border-radius: 10px;
+border-style: none;
+color: white;
 }
 
 .registrologin .pass {
@@ -41,26 +45,30 @@ margin-bottom: 10px;
 .registrologin .pass input {
 margin-top: 10px;
 margin-bottom: 10px;
-padding: 5px;
+padding: 15px;
+background-color: rgba(60,60,60,0.6);
+border-radius: 10px;
+border-style: none;
+color: white;
 }
 .registrologin .record {
-
 }
 
 .login{
   display: block;
   background-color: rgba(100,100,200,0.5);
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 35px;
   border-radius: 15px 5px;
-  padding: 10px;
+  padding: 15px 52px;
   color: #7EDCFC;
   font-family: 'Audiowide', cursive;
+  border-style: none;
 }
 .box .infopromo{
-  text-align: center;
-  color: #fff;
-  font-size: 15px;
+text-align: center;
+color: #fff;
+font-size: 15px;
 }
 .marquee {
 font-size: 30px;
@@ -126,9 +134,28 @@ overflow: hidden;
 header .logo a img {
   margin-top: 200px;
 }
+.login {
+  float: right;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+.registrologin .record {
+margin-top: 0px;
+float: right;
+clear: both;
+}
+.registrologin .user input {
+  position: relative;
+  left: 35px;
+}
+
 }
 
 
 @media (min-width: 1044px) {
 
+.login:hover {
+  background-color: white;
+  color: darkcyan;
+}
 }

@@ -28,9 +28,17 @@ overflow: hidden;
 	margin-bottom: 10px;
 
 }
+.registrologin .user input {
+
+}
+
 .registrologin .pass {
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+.registrologin .pass input {
+margin-top: 10px;
+margin-bottom: 10px;
 }
 .registrologin .record {
 
@@ -38,9 +46,13 @@ overflow: hidden;
 
 .login{
   display: block;
-  background-color: white;
+  background-color: rgba(100,100,200,0.5);
   margin-top: 10px;
-  border-radius: 5px;
+  margin-bottom: 20px;
+  border-radius: 15px 5px;
+  padding: 10px;
+  color: #7EDCFC;
+  font-family: 'Audiowide', cursive;
 }
 .box .infopromo{
   text-align: center;

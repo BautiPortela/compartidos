@@ -8,7 +8,7 @@ text-align: center;
 }
 
 header .logo {
-	margin-top: 10px;
+	margin-top: 40px;
 	margin-bottom: 30px;
 }
 
@@ -19,38 +19,43 @@ div input{
 .image{
   float: left;
 }
-/*header{
-font-family: 'Raleway', sans-serif;
-text-align: center;
-display: inline;
+.main button {
+  padding: 10px 20px;
+  background-color: rgba(100,100,100,0.4);
+  border-style: none;
+  border-radius: 10px;
+  color: #7EDCFC;
+  margin-top: 12px;
+
+
 }
-header .logo {
-	margin-top: 10px;
-	margin-bottom: 30px;
+.main  a input {
+    padding: 10px 20px;
+  background-color: rgba(100,100,100,0.4);
+  border-style: none;
+  border-radius: 10px;
+  color: #7EDCFC;
+  margin-top: 12px;
 }
-header nav ul li{
-list-style: none;
-margin: 10px 10px 10px 10px;
-}*/
-/*a:visited {
-color: blue;
-}*/
+
 .home{
 font-weight: bold;
 }
 .container{
-font-family: 'Raleway', sans-serif;
+font-family: 'Audiowide', cursive;
 color: white;
-/*box-sizing: border-box;*/
+
 max-width: 350px;
-margin: auto;
-/*padding-bottom: 10px;
-background: rgba(0, 0, 0, 0.5);*/
+margin: 0 auto;
+
+background: rgba(0, 0, 0, 0.5);
 background-color: black;
+box-shadow: 1px 1px 10px 4px black;
 opacity: 0.8;
 color: white;
 border-radius: 20px;
 padding: 20px;
+margin-bottom: 500px;
 }
 
 @media (min-width: 769px){

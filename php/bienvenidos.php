@@ -19,65 +19,10 @@
     <h1>Bienvenido a Nalu</h1>
     <h3>- Kolekole kou maka -</h3>
   </div>
-  <!--<div class="registro">
-    <form>
-      <div class="user">
-      Usuario: <input type="text" name="" value="">
-      </div>
-      <div class="pass">
-      Contraseña: <input type="password" value="">
-      </div>
-      <div class="login">
-      <button type="submit">Iniciar sesion</button>
-      <div class="record">
-        Recordarme <input type="radio">
-      </div>
-      </div>
-    </form>
-  </div>
--->
-  <!--<div class="main">
-    <div class="submain">
-      <form action="home.html" method="post">
-        <div>
-          <label for="nombre">Nombre: </label><input type="text" name="nombre" value="" placeholder="Ingrese nombre" required >
-        </div>
-        <br>
-        <br>
-        <div>
-          <label for="apellidos">Apellido: </label><input type="text" name="apellido" value="" placeholder="Ingrese apellido" required>
-        </div>
-        <br>
-        <br>
-        <div>
-          <label for="usuario">Usuario: </label><input type="text" name="usuario" value="" placeholder="Crear usuario" required>
-        </div>
-        <br>
-        <br>
-      </form>
-      </div>
-        <div class="submain1">
-          <form>
-        <div>
-          <label for="email">Email: </label><input type="email" name="email" value="" placeholder="Ingrese email" required>
-        </div>
-        <br>
-        <br>
-        <div>
-          <label for="password">Contraseña: </label><input type="password" name="password" value="" placeholder="Ingrese contraseña" required>
-        </div>
-        <br>
-        <br>
-        <div>
-          <label for="password">Repetir contraseña: </label><input type="password" name="password" value="" placeholder="Repetir contraseña" required>
-        </div>
-    </form>
-    </div>
-    </div>
-  -->
+
   <div class="ingreso">
-    <a class="hover" href="login.php"><div class="guest"><h3>Iniciar Sesion</h3></div></a>
     <a class="hover" href="registro.php"><div class="guest1" ><h3>Crear Cuenta</h3></div></a>
+    <a class="hover" href="login.php"><div class="guest"><h3>Iniciar Sesion</h3></div></a>
   </div>
 </main>
 </body>

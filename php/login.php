@@ -38,7 +38,7 @@ if ($_POST) {
   <body>
   <header>
     <div class="logo">
-      <a href="homeOX.php"><img src="../imagenes/flor.png" alt=""></a>
+      <a href="homeOX.php"><img src="../imagenes/flor.png" alt="" "></a>
     </div>
   </header>
   <div class="registrologin">

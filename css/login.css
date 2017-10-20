@@ -103,6 +103,9 @@ footer .social img{
                   height: 30px;
                   width:30px;
 }
+footer .copy {
+  margin-bottom: 20px;
+}
 /*PRIMER MEDIA QUERY */
 @media (min-width: 426px) {
 

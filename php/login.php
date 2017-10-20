@@ -8,21 +8,22 @@
     */
 
 
+$arrayErrores = [];
 if ($_POST) {
 
-//Validar
-      $arrayErrores = validarLogin($_POST);
+  //Validar
+  $arrayErrores = validarLogin($_POST);
 
-//Si es valido, loguear
-  
-      if (count($arrayErrores) == 0) {
-                      loguear($_POST["email"]);
-      if (isset($_POST["recordame"])) {
-                        recordarUsuario($_POST["email"]);
-                      }
-      header("Location:home.php");exit;
-                      }
-      }
+  //Si es valido, loguear
+  if (count($arrayErrores) == 0) {
+    loguear($_POST["email"]);
+    if (isset($_POST["recordame"])) {
+      recordarUsuario($_POST["email"]);
+    }
+    header("Location:homeOX.php");exit;
+  }
+}
+
      
 ?>
 <!DOCTYPE html>
@@ -42,12 +43,19 @@ if ($_POST) {
     </div>
   </header>
   <div class="registrologin">
+    <?php if (count($arrayErrores) > 0) : ?>
+        <ul style="color:red">
+          <?php foreach($arrayErrores as $error) : ?>
+            <li><?=$error?></li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
       <form action="" method="post">
           <div class="user">
-            Usuario: <input type="text" name="" value="" placeholder="Usuario">
+            Email:        <input type="text" name="email" value="" placeholder="Usuario">
           </div>
           <div class="pass">
-            Contraseña: <input type="password" value="" placeholder="Contraseña">
+            Contraseña: <input type="password" value="" name="password" placeholder="Contraseña">
           </div>
           <div class="ingreso">
             <button class="login" type="submit">Iniciar sesion</button>

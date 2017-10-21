@@ -12,10 +12,10 @@ $arrayErrores = [];
 if ($_POST) {
 
   //Validar
-  $arrayErrores = validarLogin($_POST);
+  $arrayDeErrores = validarLogin($_POST);
 
   //Si es valido, loguear
-  if (count($arrayErrores) == 0) {
+  if (count($arrayDeErrores) == 0) {
     loguear($_POST["email"]);
     if (isset($_POST["recordame"])) {
       recordarUsuario($_POST["email"]);
@@ -43,9 +43,9 @@ if ($_POST) {
     </div>
   </header>
   <div class="registrologin">
-    <?php if (count($arrayErrores) > 0) : ?>
+    <?php if (count($arrayDeErrores) > 0) : ?>
         <ul style="color:red">
-          <?php foreach($arrayErrores as $error) : ?>
+          <?php foreach($arrayDeErrores as $error) : ?>
             <li><?=$error?></li>
           <?php endforeach; ?>
         </ul>
